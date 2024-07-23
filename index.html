@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>はらわたゲーム</title>
+    <style>
+        body {
+            background-color: #000;
+            color: #ff0000;
+            font-family: 'Courier New', monospace;
+            text-align: center;
+            padding: 20px;
+            background-image: url('https://placekitten.com/2000/1000');
+            background-size: cover;
+            background-position: center;
+            background-blend-mode: overlay;
+        }
+        h1 {
+            font-size: 3em;
+            text-shadow: 2px 2px 4px #ff0000;
+            animation: flicker 0.5s infinite alternate;
+        }
+        p {
+            font-size: 1.2em;
+            max-width: 800px;
+            margin: 20px auto;
+            text-shadow: 1px 1px 2px #ff0000;
+        }
+        .button {
+            display: inline-block;
+            padding: 10px 20px;
+            margin: 10px;
+            font-size: 1.2em;
+            color: #fff;
+            background-color: #600;
+            border: 2px solid #f00;
+            text-decoration: none;
+            transition: all 0.3s;
+        }
+        .button:hover {
+            background-color: #f00;
+            color: #000;
+            transform: scale(1.1);
+        }
+        @keyframes flicker {
+            0% {opacity: 0.8;}
+            100% {opacity: 1;}
+        }
+    </style>
+</head>
+<body>
+    <h1>はらわたゲーム</h1>
+    <p>説明：このゲームはテトリスのようなパズルゲームです。上から降ってくるブロックを、いくら消しても得点特典もなく、クリアもできません。ブロックの中の文字を、縦、横どちらでもよいので「はらわたもち」と並べるだけのとっても簡単な、赤ちゃんにでも、ミジンコにでもミドリムシにでもできるゲームです。</p>
+    <p>さあ、ゲームをクリアして、特典映像を見よう。</p>
+    <a href="https://kengoogle.github.io/TETRIS01/" class="button">はらわたやる</a>
+    <a href="https://teamkimi.wixsite.com/ayabechiku/kimi" class="button">はらわたやらん</a>
+    <script>
+        document.body.addEventListener('mousemove', function(e) {
+            const x = e.clientX / window.innerWidth;
+            const y = e.clientY / window.innerHeight;
+            document.body.style.backgroundPosition = `${x * 100}% ${y * 100}%`;
+        });
+    </script>
+</body>
+</html>
